@@ -5,7 +5,7 @@ import numpy as np
 from ultralytics import YOLO
 
 # opening the file in read mode
-my_file = open("utils/coco.txt", "r")
+my_file = open(r"E:\Documents\Python_scripts\yolov8\yolov8-silva\utils\coco.txt", "r")
 # reading the file
 data = my_file.read()
 # replacing end splitting the text | when newline ('\n') is seen.
@@ -29,8 +29,8 @@ model = YOLO("weights/yolov8n.pt", "v8")
 frame_wid = 640
 frame_hyt = 480
 
-# cap = cv2.VideoCapture(1)
-cap = cv2.VideoCapture("inference/videos/afriq0.MP4")
+cap = cv2.VideoCapture(0)
+# cap = cv2.VideoCapture(r"E:\Videos\chaplin.mp4")
 
 if not cap.isOpened():
     print("Cannot open camera")
@@ -70,7 +70,7 @@ while True:
                 (int(bb[0]), int(bb[1])),
                 (int(bb[2]), int(bb[3])),
                 detection_colors[int(clsID)],
-                3,
+                1,
             )
 
             # Display class name and confidence

@@ -1,0 +1,1 @@
+DATA_PATH="../yolov8-silva/inference/images/"
